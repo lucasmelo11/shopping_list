@@ -16,20 +16,16 @@
       <div class="container">
         <div class="container-list">
           <div class="container-items">
-            <!-- Lista dos itens -->
-            <input type="text" name="insert-item" id="insert-item" placeholder="insira um item">
-            <div class="item-list">
-              <!-- <input type="checkbox" id="item" name="item" />
-              <label for="item">BISCOITO</label> -->
+            <div class="container-add-item">
+              <input type="text" name="insert-item" id="insert-item" placeholder="insira um item" />
+              <button id="add-item" onclick="addItem()"><span>+</span></button>
             </div>
+            <!-- Lista dos itens -->
+            <div class="item-list"></div>
           </div>
         </div>
       </div>
     </section>
-
-    <div class="container-add-item">
-      <button id="add-item" onclick="addItem()"><span>+</span></button>
-    </div>
 
     <script type="text/javascript" src="./script.js"></script>
   </body>

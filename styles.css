@@ -28,8 +28,8 @@ body {
     flex-direction: column;
 }
 
-.container-add-item {
-  height: 175px;
+/* .container-add-item {
+  height: 75px;
   width: auto;
   display: flex;
   flex-direction: column;
@@ -37,12 +37,12 @@ body {
   align-items: flex-end;
   padding: 0 10px 10px 0;
   background-color: #bc3908;
-}
+} */
 
 #add-item {
   position: absolute;
-  height: 50px;
-  width: 50px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   background-color: #bc3908;
 }
