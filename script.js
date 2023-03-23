@@ -4,6 +4,7 @@ function addItem() {
   let elInput = document.createElement("input");
   elInput.setAttribute("type", "checkbox");
   elInput.setAttribute("id", "item");
+  elInput.addEventListener("change", removeItem);
 
   let elLabel = document.createElement("label");
   elLabel.setAttribute("for", "item");
@@ -17,14 +18,3 @@ function addItem() {
 
   console.log("clicou");
 }
-
-// terminar função de remover item da lista
-
-let item = document.getElementById("item");
-let div = document.getElementsByClassName("item-list");
-
-item.addEventListener("change", function () {
-  if (item.checked) {
-    item.remove();
-  }
-});
