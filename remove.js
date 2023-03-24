@@ -1,13 +1,21 @@
 function removeItem() {
-  const item = document.getElementById("item");
-  //   const div = document.getElementsByClassName("item-list");
+  const item = document.querySelectorAll('input[type="checkbox"]'); 
   if (item.checked) {
-    item.remove();
-    item.parentNode.removeChild(document.querySelector('label[for="item"]'));
-    console.log("Checkbox marcado");
+    console.log("existe");
   } else {
-    console.log("Checkbox desmarcado");
+    console.log("não existe");
   }
 }
 
-// corrigir remoção do label
+// itemCheckbox.forEach(function (checkbox) {
+//   if (checkbox.checked) {
+//     const itemAtual = checkbox;
+//     const divItemsList = item.parentNode;
+
+//     itemAtual.remove();
+//     divItemsList.removeChild(document.querySelector('label[for="item"]'));
+//     console.log("Checkbox marcado");
+//   } else {
+//     console.log("Checkbox desmarcado");
+//   }
+// });
