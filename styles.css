@@ -22,10 +22,11 @@ body {
   background-color: #38423b;
 }
 
-.item-list {
+#item-list {
   margin: 30px;
   display: flex;
   flex-direction: column;
+  background-color: rgba(251, 255, 0, 0.404);
 }
 
 /* .container-add-item {
@@ -45,4 +46,8 @@ body {
   width: 25px;
   border-radius: 50%;
   background-color: #bc3908;
+}
+
+.item-checked {
+  text-decoration: line-through;
 }

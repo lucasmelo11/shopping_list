@@ -1,20 +1,44 @@
+// FUNÇÃO QUE ADICIONA ITEM
 function addItem() {
-  const fieldItem = document.getElementById("insert-item");
+  // campo para inserir o nome do item
+  const fieldIsertItem = document.getElementById("insert-item");
+  // contador que cria um id para cada elemento da lista
+  var countId = document.getElementById("item-list").childElementCount + 1;
 
-  const elInput = document.createElement("input");
-  elInput.setAttribute("type", "checkbox");
-  elInput.setAttribute("id", "item");
-  elInput.addEventListener("change", removeItem);
+  // cria novo item da lista
+  var newItem = document.createElement("li");
+  newItem.id = "item-" + countId;
+  // newItem.addEventListener("click", traceItem);
 
-  const elLabel = document.createElement("label");
-  elLabel.setAttribute("for", "item");
-  elLabel.innerText = fieldItem.value;
+  // adiciona o nome digitado no campo fieldIsertItem como label do item
+  var textItem = document.createTextNode(fieldIsertItem.value);
+  newItem.appendChild(textItem);
 
-  const elDiv = document.getElementsByClassName("item-list")[0];
-  elDiv.appendChild(elInput);
-  elDiv.appendChild(elLabel);
+  // adiciona a lista de itens no elemento <ul> da página
+  var list = document.getElementById("item-list");
+  list.appendChild(newItem);
 
-  fieldItem.value = "";
+  // adiciona um checkbox para cada item da lista
+  var checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  newItem.appendChild(checkbox);
+
+  // adiciona um evento de click e chama a função para verificar se está marcado
+  checkbox.addEventListener("click", testCheckbox);
+
+  // limpa o campo de inserir nome do item
+  fieldIsertItem.value = "";
 
   console.log("clicou");
+}
+
+// FUNÇÃO QUE TESTA O CHECKBOX
+function testCheckbox() {
+  if (this.checked) {
+    this.parentNode.classList.add("item-checked");
+    console.log("marcou");
+  } else {
+    this.parentNode.classList.remove("item-checked");
+    console.log("desmarcou");
+  }
 }
