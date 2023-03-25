@@ -8,7 +8,6 @@ function addItem() {
   // cria novo item da lista
   var newItem = document.createElement("li");
   newItem.id = "item-" + countId;
-  // newItem.addEventListener("click", traceItem);
 
   // adiciona o nome digitado no campo fieldIsertItem como label do item
   var textItem = document.createTextNode(fieldIsertItem.value);
@@ -22,6 +21,7 @@ function addItem() {
   var checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   newItem.appendChild(checkbox);
+  newItem.insertBefore(textItem, checkbox.nextSibling);
 
   // adiciona um evento de click e chama a função para verificar se está marcado
   checkbox.addEventListener("click", testCheckbox);

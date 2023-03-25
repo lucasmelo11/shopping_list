@@ -13,20 +13,29 @@ body {
   align-items: center;
   background-color: #38423b;
 }
-.container {
+.container-main {
   margin: 2px auto 0 auto;
-  width: 90vw;
-  height: 450px;
+  width: 50%;
+  height: 50vh;
   display: flex;
   justify-content: center;
   background-color: #38423b;
 }
 
+@media (max-width: 768px) {
+  .container-main {
+    width: 320px;
+  }
+}
+
 #item-list {
   margin: 30px;
+  width: 120px;
   display: flex;
   flex-direction: column;
   background-color: rgba(251, 255, 0, 0.404);
+  list-style-position: outside;
+  list-style-type: none;
 }
 
 /* .container-add-item {
@@ -46,6 +55,9 @@ body {
   width: 25px;
   border-radius: 50%;
   background-color: #bc3908;
+}
+
+.delete-item {
 }
 
 .item-checked {
