@@ -4,6 +4,7 @@ body {
   margin: 0;
   background-color: #2d2d2a;
 }
+
 .title-list {
   margin: 5% auto 0 auto;
   width: 200px;
@@ -13,41 +14,47 @@ body {
   align-items: center;
   background-color: #38423b;
 }
+
 .container-main {
   margin: 2px auto 0 auto;
-  width: 50%;
+  width: 20vw;
   height: 50vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   background-color: #38423b;
 }
 
-@media (max-width: 768px) {
-  .container-main {
-    width: 320px;
-  }
+.container-input{
+  width: auto;
+  height: 50px;
 }
 
-#item-list {
-  margin: 30px;
-  width: 120px;
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(251, 255, 0, 0.404);
-  list-style-position: outside;
-  list-style-type: none;
-}
-
-/* .container-add-item {
-  height: 75px;
+.container-add-item {
+  height: 35px;
   width: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: 0 10px 10px 0;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background-color: #bc3908;
-} */
+}
+
+#insert-item{
+  height: 20px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.container-btn{
+  height: auto;
+  width: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: aquamarine;
+}
 
 #add-item {
   position: absolute;
@@ -57,9 +64,33 @@ body {
   background-color: #bc3908;
 }
 
-.delete-item {
+@media (max-width: 768px) {
+  .container-main {
+    width: 320px;
+  }
 }
 
+/* .container-list-item{
+  width: 150px;
+  height: 250px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+} */
+
+#item-list {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(251, 255, 0, 0.404);
+  list-style-position: outside;
+  list-style-type: none;
+}
+
+/* Adiciona risco no label do item */
 .item-checked {
   text-decoration: line-through;
 }

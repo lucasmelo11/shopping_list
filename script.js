@@ -23,6 +23,9 @@ function addItem() {
   newItem.appendChild(checkbox);
   newItem.insertBefore(textItem, checkbox.nextSibling);
 
+  // var editItem = document.createElement("button");
+  // editItem.appendChild(editItem)
+
   // adiciona um evento de click e chama a função para verificar se está marcado
   checkbox.addEventListener("click", testCheckbox);
 
