@@ -1,6 +1,5 @@
 // FUNÇÃO QUE ADICIONA ITEM
 function addItem() {
-  // campo para inserir o nome do item
   const fieldIsertItem = document.getElementById("insert-item");
   // contador que cria um id para cada elemento da lista
   var countId = document.getElementById("item-list").childElementCount + 1;
@@ -8,10 +7,6 @@ function addItem() {
   // cria novo item da lista
   var newItem = document.createElement("li");
   newItem.id = "item-" + countId;
-
-  // adiciona o nome digitado no campo fieldIsertItem como label do item
-  var textItem = document.createTextNode(fieldIsertItem.value);
-  newItem.appendChild(textItem);
 
   // adiciona a lista de itens no elemento <ul> da página
   var list = document.getElementById("item-list");
@@ -21,10 +16,53 @@ function addItem() {
   var checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   newItem.appendChild(checkbox);
-  newItem.insertBefore(textItem, checkbox.nextSibling);
 
-  // var editItem = document.createElement("button");
-  // editItem.appendChild(editItem)
+  // adiciona o nome digitado no campo fieldIsertItem como label do item
+  var textItem = document.createTextNode(fieldIsertItem.value);
+  newItem.appendChild(textItem);
+
+  // adiciona botão para excluir o item da lista
+  var btnDelItem = document.createElement("button");
+  btnDelItem.id = "delete-item-btn-" + countId;
+  btnDelItem.classList.add("delete-btn");
+  btnDelItem.innerHTML = '<i class="fa-solid fa-trash"></i>';
+  newItem.appendChild(btnDelItem);
+  btnDelItem.addEventListener("click", function () {
+    newItem.remove();
+  });
+
+  // adiciona botão para editar o item da lista
+  var btnEditItem = document.createElement("button");
+  btnEditItem.classList.add("edit-btn");
+  btnEditItem.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+  newItem.appendChild(btnEditItem);
+
+  // Habilita edição do item
+  btnEditItem.addEventListener("click", function () {
+    // cria uma classe para verificar se o campo está em edição
+    if (newItem.classList.contains("editing")) {
+      return;
+    }
+    newItem.classList.add("editing");
+    
+    // cria um campo de input para editar o elemento
+    var inputEditItem = document.createElement("input");
+    inputEditItem.type = "text";
+    inputEditItem.value = textItem.textContent;
+    newItem.replaceChild(inputEditItem, textItem);
+
+    // colocar o cursor no campo criado
+    inputEditItem.focus();
+
+    // insere o valor do input criado ao apertar ENTER
+    inputEditItem.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        var newTextItem = document.createTextNode(inputEditItem.value);
+        newItem.replaceChild(newTextItem, inputEditItem);
+        newItem.classList.remove("editing");
+      }
+    });
+  });
 
   // adiciona um evento de click e chama a função para verificar se está marcado
   checkbox.addEventListener("click", testCheckbox);
@@ -39,9 +77,7 @@ function addItem() {
 function testCheckbox() {
   if (this.checked) {
     this.parentNode.classList.add("item-checked");
-    console.log("marcou");
   } else {
     this.parentNode.classList.remove("item-checked");
-    console.log("desmarcou");
   }
 }

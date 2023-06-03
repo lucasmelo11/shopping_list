@@ -25,7 +25,7 @@ body {
   background-color: #38423b;
 }
 
-.container-input{
+.container-input {
   width: auto;
   height: 50px;
 }
@@ -40,28 +40,21 @@ body {
   background-color: #bc3908;
 }
 
-#insert-item{
+#insert-item {
   height: 20px;
   width: 150px;
+  padding-left: 10px;
   border-radius: 10px;
+  border-style: none;
 }
 
-.container-btn{
+.container-btn {
   height: auto;
   width: 30px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: aquamarine;
-}
-
-#add-item {
-  position: absolute;
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  background-color: #bc3908;
 }
 
 @media (max-width: 768px) {
@@ -93,4 +86,25 @@ body {
 /* Adiciona risco no label do item */
 .item-checked {
   text-decoration: line-through;
+}
+
+button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+#btn-add-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-style: none;
+}
+
+.edit-btn, .delete-btn {
+  margin: 2px;
+  background-color: white;
+  border-style: none;
+  float: right;
 }
